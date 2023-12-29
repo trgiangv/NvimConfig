@@ -1,7 +1,7 @@
 -- mapping Python
 local M = {}
 
-M.dap = {
+M.debugger = {
   plugin = true,
   n = {
     ["<leader>db"] = {
@@ -11,29 +11,36 @@ M.dap = {
     ["<leader>dr"] = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
+    },
+    ["<leader>dy"] = {
+      function()
+        require('dap-python').test_method()
+      end,
+      "Run pytest on current method"
     }
   },
 }
 
-M.dap_python = {
-  plugin = true,
-  n = {
-    ["<leader>dpr"] = {
-      function()
-        require('dap-python').test_method()
-      end
-    }
-  }
-}
-
 M.nvimtree = {
   plugin = true,
-
   n = {
-    -- toggle
     ["<leader>ee"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
     ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
-    ["<leader>ef"] = { "<cmd> NvimTreeFindFile <CR>", "Find file in nvimtree" },
+  },
+}
+
+
+M.general = {
+  n = {
+    ["<A-y>"] = {
+      function()
+        vim.cmd([[let @+ = expand('%:p')]])
+      end,
+      "Copy current file path"
+    },
+  },
+  i = {
+    ["jj"] = { "<esc>", "Escape insert mode" },
   },
 }
 return M

@@ -27,8 +27,8 @@ local plugins = {
         -- python
         "black",
         "debugpy",
-        "pyright",
-        -- "python-lsp-server",
+        -- "pyright",
+        "python-lsp-server",
       },
     },
   },

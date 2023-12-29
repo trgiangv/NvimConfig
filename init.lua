@@ -46,5 +46,4 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
   pattern = { "*" },
 })
 
--- set keymap to copy current file path to clipboard
-vim.api.nvim_set_keymap('n', '<A-y>', [[:let @+ = expand("%:p")<CR>]], { noremap = true })
+

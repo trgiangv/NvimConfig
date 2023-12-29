@@ -4,7 +4,7 @@ local M = {}
 M.debugger = {
   plugin = true,
   n = {
-    ["<leader>db"] = {
+    ["<leader>dp"] = {
       "<cmd> DapToggleBreakpoint <CR>",
       "Add breakpoint at line"
     },
@@ -26,6 +26,9 @@ M.nvimtree = {
   n = {
     ["<leader>ee"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
     ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+    ["<leader>ef"] = { "<cmd> NvimTreeFindFile <CR>", "Find current file in explorer" },
+    -- ["h"] = { ":lua require('nvim-tree.api').node.navigate.parent_close()<CR>", "Close Directory" },
+    -- ["l"] = { ":lua require('nvim-tree.api').node.open.edit()<CR>", "Open Directory" },
   },
 }
 

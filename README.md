@@ -1,26 +1,29 @@
-# Neovim config
+# Neovim Configuration Setup
 
-This configuration goes along with the Neovim for javascript and python with pre-built framework Nvchad
-(followed [Dreams of Code](https://youtube.com/@dreamsofcode))
+This Neovim configuration is tailored for JavaScript and Python development using the Nvchad framework, as recommended by [Dreams of Code](https://youtube.com/@dreamsofcode).
 
-Installation guide:
+## Installation Guide:
 
-**1. Clone down the** [NVChad](https://nvchad.com)
-***Linux***
-```
-git clone https://github.com/NvChad/NvChad $HOME/.config/nvim
-```
-***Window***
-```
-git clone https://github.com/NvChad/NvChad $env:LOCALAPPDATA\nvim
-```
+1. **Clone [NVChad](https://nvchad.com) Configuration:**
 
-**2. Clone my custom config:**
-***Linux***
-```
-git clone https://github.com/trgiangv/NvimConfig.git $HOME/.config/nvim/lua/custom
-```
-***Window***
-```
-git clone https://github.com/trgiangv/NvimConfig.git $env:LOCALAPPDATA\nvim\lua\custom
-```
+   - **Linux:**
+     ```bash
+     git clone https://github.com/NvChad/NvChad $HOME/.config/nvim
+     ```
+
+   - **Windows:**
+     ```powershell
+     git clone https://github.com/NvChad/NvChad $env:LOCALAPPDATA\nvim
+     ```
+
+2. **Clone Custom Configuration:**
+
+   - **Linux:**
+     ```bash
+     git clone https://github.com/trgiangv/NvimConfig.git $HOME/.config/nvim/lua/custom
+     ```
+
+   - **Windows:**
+     ```powershell
+     git clone https://github.com/trgiangv/NvimConfig.git $env:LOCALAPPDATA\nvim\lua\custom
+     ```

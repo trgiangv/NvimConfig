@@ -5,12 +5,12 @@ This configuration goes along with the Neovim for javascript and python with pre
 
 Installation guide:
 
-**1. Clone down the** [NVChad](https://nvchad.com)""
+**1. Clone down the** [NVChad](https://nvchad.com)**
 ***Linux***
 ```
 git clone https://github.com/NvChad/NvChad $HOME/.config/nvim
 ```
-***Window**
+***Window***
 ```
 git clone https://github.com/NvChad/NvChad $env:LOCALAPPDATA\nvim
 ```

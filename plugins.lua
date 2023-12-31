@@ -23,11 +23,8 @@ local plugins = {
         "prettierd",
         "tailwindcss-language-server",
         "typescript-language-server",
-        "js-debug-adapter",
         -- python
         "black",
-        "debugpy",
-        -- "pyright",
         "python-lsp-server",
       },
     },
@@ -42,37 +39,9 @@ local plugins = {
         "typescript",
         "tsx",
         "python",
-        "html",
-        "css",
       }
       return opts
     end,
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
-    config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
-    end
-  },
-  {
-    "mfussenegger/nvim-dap",
-    config = function()
-      require "custom.configs.dap"
-      require("core.utils").load_mappings("dap")
-    end
   },
 
   -- nodejs
@@ -81,22 +50,6 @@ local plugins = {
     ft = {"javascript", "javascriptreact", "typescript", "typescriptreact"},
     config = function()
       require("nvim-ts-autotag").setup()
-    end,
-  },
-
-  --python
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-    },
-    config = function(_, opts)
-      local localAppData = os.getenv("LOCALAPPDATA")
-      local path = localAppData .. "/nvim-data/mason/packages/debugpy/venv/Scripts/python.exe"
-      require("dap-python").setup(path)
-      require("core.utils").load_mappings("dap_python")
     end,
   },
 
@@ -116,14 +69,6 @@ local plugins = {
     end,
     config = function(_, opts)
       require("copilot").setup(opts)
-    end
-  },
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    opts = function ()
-      return require "custom.configs.symbol-layout"
     end
   },
   {

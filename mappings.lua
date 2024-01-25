@@ -29,18 +29,18 @@ M.nvimtree = {
   },
 }
 
---
--- M.general = {
---   n = {
---     ["<A-y>"] = {
---       function()
---         vim.cmd([[let @+ = expand('%:p')]])
---       end,
---       "Copy current file path"
---     },
---   },
---   i = {
---     ["jj"] = { "<esc>", "Escape insert mode" },
---   },
--- }
+
+M.general = {
+  n = {
+    ["<A-y>"] = {
+      function()
+        vim.cmd([[let @+ = expand('%:p')]])
+      end,
+      "Copy current file path"
+    },
+  },
+  i = {
+    ["jj"] = { "<esc>", "Escape insert mode" },
+  },
+}
 return M

@@ -23,9 +23,10 @@ local plugins = {
         "prettierd",
         "tailwindcss-language-server",
         "typescript-language-server",
+        "lua-language-server",
         -- python
         "black",
-        "python-lsp-server",
+        "pyright",
       },
     },
   },

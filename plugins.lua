@@ -15,18 +15,82 @@ local plugins = {
     end,
   },
   {
+    "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require("dap")
+      local dapui = require("dapui")
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {}
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+    config = function(_, _)
+      require("core.utils").load_mappings("dap")
+    end
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function(_, opts)
+      local localAppData = os.getenv("LOCALAPPDATA")
+      local path = localAppData .. "/nvim-data/mason/packages/debugpy/venv/Scripts/python.exe"
+      require("dap-python").setup(path)
+      require("core.utils").load_mappings("dap_python")
+    end,
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        -- lua
+        "lua-language-server",
+        "stylua",
         -- nodejs
         "eslint-lsp",
         "prettierd",
         "tailwindcss-language-server",
         "typescript-language-server",
-        "lua-language-server",
+        "js-debug-adapter",
         -- python
         "black",
         "pyright",
+        "debugpy",
+        -- csharp
+        "omnisharp",
+        "csharpier",
+        "netcoredbg",
+        -- c++
+        "clangd",
+        "clang-format",
+        "codelldb",
+        -- ps1
+        "powershell-editor-services"
       },
     },
   },
@@ -36,10 +100,13 @@ local plugins = {
       local opts = require "plugins.configs.treesitter"
       opts.ensure_installed = {
         "lua",
-        "javascript",
-        "typescript",
-        "tsx",
+        "javascript", "typescript", "html", "css", "tsx",
         "python",
+        "c_sharp",
+        "c",
+        "cpp",
+        "json", "yaml", "csv", "comment", "xml",
+        "gitignore", "gitcommit", "git_config", "git_rebase", "gitattributes"
       }
       return opts
     end,

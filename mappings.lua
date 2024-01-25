@@ -1,24 +1,29 @@
 -- mapping Python
 local M = {}
 
-M.debugger = {
+M.dap = {
   plugin = true,
   n = {
-    ["<leader>dp"] = {
+    ["<leader>db"] = {
       "<cmd> DapToggleBreakpoint <CR>",
-      "Add breakpoint at line"
+      "Add breakpoint at line",
     },
     ["<leader>dr"] = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
-    },
-    ["<leader>dy"] = {
+    }
+  }
+}
+
+M.dap_python = {
+  plugin = true,
+  n = {
+    ["<leader>dpr"] = {
       function()
         require('dap-python').test_method()
-      end,
-      "Run pytest on current method"
+      end
     }
-  },
+  }
 }
 
 M.nvimtree = {

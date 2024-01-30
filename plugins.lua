@@ -81,10 +81,6 @@ local plugins = {
         "black",
         "pyright",
         "debugpy",
-        -- csharp
-        "omnisharp",
-        "csharpier",
-        "netcoredbg",
         -- c++
         "clangd",
         "clang-format",
@@ -102,7 +98,6 @@ local plugins = {
         "lua",
         "javascript", "typescript", "html", "css", "tsx",
         "python",
-        "c_sharp",
         "c",
         "cpp",
         "json", "yaml", "csv", "comment", "xml",

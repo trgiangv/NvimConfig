@@ -52,43 +52,5 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
--- csharp
-lspconfig.omnisharp.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
--- lspconfig.pylsp.setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = {"python"},
---   settings = {
---     pylsp = {
---       plugins = {
---         pycodestyle = {
---           ignore = {'W391'},
---           maxLineLength = 100
---         },
---         jedi = {
---           extra_paths = {
---             -- Add your extra paths here
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/2019",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/common",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/DSCore",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/pyrevit",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/pyrevitlib",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/site-packages",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/Revit",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/RevitServices",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/Rhinoceros",
---             "F:/OneDrive/1_Giang Vu/Revit_API_Python/Set up Autocomplete/autocad_api",
---             "F:/DIG_GiangVu/GTV_Tools/pyGTVRevit.extension/lib"
---           },
---         },
---       }
---     }
---   }
---   })
-
 
 end

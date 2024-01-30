@@ -89,9 +89,6 @@ local plugins = {
         "powershell-editor-services",
         -- rust
         "rust-analyzer",
-        -- go
-        "gopls",
-
       },
     },
   },
@@ -105,6 +102,7 @@ local plugins = {
         "python",
         "c",
         "cpp",
+        "rust",
         "json", "yaml", "csv", "xml",
         "gitignore", "gitcommit", "git_config", "git_rebase", "gitattributes"
       }
@@ -155,19 +153,6 @@ local plugins = {
     config = function(_, opts)
       require("nvim-dap-virtual-text").setup()
     end
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = function()
-      local M = require "plugins.configs.cmp"
-      M.completion.completeopt = "menu,menuone,noselect"
-      M.mapping["<CR>"] = cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Insert,
-        select = false,
-      }
-      table.insert(M.sources, {name = "crates"})
-      return M
-    end,
   },
 
   -- utilities

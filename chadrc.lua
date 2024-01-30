@@ -73,8 +73,8 @@ M.ui = {
   lsp = {
     -- show function signatures i.e args as you type
     signature = {
-      disabled = false,
-      silent = true, -- silences 'no signature help available' message from appearing
+      disabled = true,
+      silent = false, -- silences 'no signature help available' message from appearing
     },
   },
 }

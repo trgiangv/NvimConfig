@@ -11,7 +11,7 @@ end
 -- Configure for Nvy
 if vim.g.nvy then
     -- Put anything you want to happen only in Neovide here
-    vim.o.guifont = "JetBrainsMono Nerd Font:h16"
+    vim.o.guifont = "JetBrainsMono Nerd Font:h10"
     vim.opt.linespace = 3
 end
 

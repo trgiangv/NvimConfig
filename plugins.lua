@@ -157,11 +157,17 @@ local plugins = {
 
   -- utilities
   {
-  "https://git.sr.ht/~nedia/auto-save.nvim",
-  event = "BufWinEnter",
-  config = function()
-    require("auto-save").setup()
-  end
+    "https://git.sr.ht/~nedia/auto-save.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("auto-save").setup()
+    end
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    config = function()
+      require('ufo').setup()
+    end
   },
   {
     "zbirenbaum/copilot.lua",

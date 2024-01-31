@@ -41,13 +41,7 @@ M.crates = {
 M.nvimtree = {
   plugin = true,
   n = {
-<<<<<<< HEAD
-    ["<leader>ee"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
-    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
-=======
-    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
-    -- ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
->>>>>>> 3a682912bdc95b0bee440f3ebb9b0964705f714c
+
   },
 }
 

@@ -1,29 +1,34 @@
-# Neovim Configuration Setup
+# AstroNvim Template
 
-This Neovim configuration is tailored for JavaScript and Python development using the Nvchad framework, as recommended by [Dreams of Code](https://youtube.com/@dreamsofcode).
+**NOTE:** This is for AstroNvim v4+
 
-## Installation Guide:
+A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-1. **Clone [NVChad](https://nvchad.com) Configuration:**
+## 🛠️ Installation
 
-   - **Linux:**
-     ```bash
-     git clone https://github.com/NvChad/NvChad $HOME/.config/nvim
-     ```
+#### Make a backup of your current nvim and shared folder
 
-   - **Windows:**
-     ```powershell
-     git clone https://github.com/NvChad/NvChad $env:LOCALAPPDATA\nvim
-     ```
+```shell
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+```
 
-2. **Clone Custom Configuration:**
+#### Create a new user repository from this template
 
-   - **Linux:**
-     ```bash
-     git clone https://github.com/trgiangv/NvimConfig.git $HOME/.config/nvim/lua/custom
-     ```
+Press the "Use this template" button above to create a new repository to store your user configuration.
 
-   - **Windows:**
-     ```powershell
-     git clone https://github.com/trgiangv/NvimConfig.git $env:LOCALAPPDATA\nvim\lua\custom
-     ```
+You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
+
+#### Clone the repository
+
+```shell
+git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+```
+
+#### Start Neovim
+
+```shell
+nvim
+```
